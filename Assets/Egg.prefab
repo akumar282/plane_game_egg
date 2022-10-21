@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 109730710383544674}
   - component: {fileID: -2935502934671496923}
   - component: {fileID: -1218497990726056281}
+  - component: {fileID: -4714935455261349823}
   m_Layer: 0
   m_Name: Egg
   m_TagString: EggoWaffle
@@ -144,3 +145,24 @@ PolygonCollider2D:
       - {x: 0.14999999, y: -0.65}
       - {x: 0.32, y: -0.59}
       - {x: 0.51, y: -0.37}
+--- !u!50 &-4714935455261349823
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 196740237562022806}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 0

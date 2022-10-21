@@ -10,15 +10,24 @@ public class Generate : MonoBehaviour
     public TMP_Text PlaneNumber;
     public int totalPlanes = 10;
     public int NumPlanes = 0;
+    public int A = 0;
+    public int B = 0;
+    public int C = 0;
+    public int D = 0;
+    public int D = 0;
+    public int F = 0;
+
     // Start is called before the first frame update
-    void Create() 
+    void Create()
     {
         Vector3 randomCreate = new Vector3(Random.Range(-140, 140), Random.Range(-90, 90), 0);
         Instantiate(prefab, randomCreate, Quaternion.identity);
     }
     void Start()
     {
-        for(int i = 0; i < totalPlanes; i++){
+        Vector3 Create = new Vector3(Random.Range(-140, 140), Random.Range(-90, 90), 0);
+        for (int i = 0; i < totalPlanes; i++)
+        {
             Create();
         }
     }
