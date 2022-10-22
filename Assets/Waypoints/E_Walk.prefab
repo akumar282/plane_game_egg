@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1539878752182999000}
   - component: {fileID: 4043471815167595222}
-  - component: {fileID: 3647015453286312039}
   - component: {fileID: -4936471722789256021}
+  - component: {fileID: 4033264233266115139}
   m_Layer: 0
   m_Name: E_Walk
-  m_TagString: Untagged
+  m_TagString: E_Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3647015453286312039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 317285768549335108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4afcf067991844783c2619468545d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &-4936471722789256021
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -195,3 +183,28 @@ PolygonCollider2D:
       - {x: -0.36499998, y: -1.4599999}
       - {x: -0.235, y: -1.11}
       - {x: -0.21499999, y: -1.03}
+--- !u!114 &4033264233266115139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317285768549335108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4afcf067991844783c2619468545d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A_Walk: {fileID: 1203801149151443318, guid: 4a581a0de3f73224c903776463725def, type: 3}
+  Aval: 1
+  B_Walk: {fileID: 2076211377940749220, guid: b5e328b31337e6f42b8d28da664cf73c, type: 3}
+  Bval: 1
+  C_Walk: {fileID: 7251675823689388870, guid: bb5d1916a6951e349afb934165a6f16c, type: 3}
+  Cval: 1
+  D_Walk: {fileID: 1186393685349099310, guid: 1c529bdbd37b14d4b9c0aca20129445b, type: 3}
+  Dval: 1
+  E_Walk: {fileID: 317285768549335108}
+  Eval: 1
+  F_Walk: {fileID: 5154316357701110716, guid: e3eee729b4bf54d4fa3cab3d22ae9b25, type: 3}
+  Fval: 1
+  Gen: {fileID: 0}

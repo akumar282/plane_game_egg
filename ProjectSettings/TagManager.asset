@@ -6,6 +6,13 @@ TagManager:
   tags:
   - EggoWaffle
   - JetPlane
+  - WAYPOINT
+  - A_Walk
+  - B_Walk
+  - C_Walk
+  - D_Walk
+  - E_Walk
+  - F_Walk
   layers:
   - Default
   - TransparentFX

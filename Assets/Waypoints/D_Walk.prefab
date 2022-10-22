@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4560942992212271910}
   - component: {fileID: 3177659328178029672}
-  - component: {fileID: 6026039938982200740}
   - component: {fileID: -6464019410392398521}
+  - component: {fileID: 371811359862182248}
   m_Layer: 0
   m_Name: D_Walk
-  m_TagString: Untagged
+  m_TagString: D_Walk
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6026039938982200740
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1186393685349099310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff4afcf067991844783c2619468545d9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!60 &-6464019410392398521
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -186,3 +174,28 @@ PolygonCollider2D:
       - {x: 1.0749999, y: -1.38}
       - {x: 1.125, y: -1.36}
       - {x: 1.125, y: -1.3199999}
+--- !u!114 &371811359862182248
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186393685349099310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff4afcf067991844783c2619468545d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  A_Walk: {fileID: 1203801149151443318, guid: 4a581a0de3f73224c903776463725def, type: 3}
+  Aval: 1
+  B_Walk: {fileID: 2076211377940749220, guid: b5e328b31337e6f42b8d28da664cf73c, type: 3}
+  Bval: 1
+  C_Walk: {fileID: 7251675823689388870, guid: bb5d1916a6951e349afb934165a6f16c, type: 3}
+  Cval: 1
+  D_Walk: {fileID: 1186393685349099310}
+  Dval: 1
+  E_Walk: {fileID: 317285768549335108, guid: d51c9e2128921074382782bac57731c9, type: 3}
+  Eval: 1
+  F_Walk: {fileID: 5154316357701110716, guid: e3eee729b4bf54d4fa3cab3d22ae9b25, type: 3}
+  Fval: 1
+  Gen: {fileID: 0}

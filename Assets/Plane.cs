@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Plane : MonoBehaviour
 {
+    // private string[] kWayPointNames = {
+    //     "A_Walk", "B_Walk", "C_Walk",
+    //     "D_Walk", "E_Walk", "F_Walk"};
+    // private GameObject[] mWayPoints;
+    // private const int kNumWayPoints = 6;
     // Start is called before the first frame update
     int Health = 100;
     void Start()
@@ -11,6 +16,14 @@ public class Plane : MonoBehaviour
         Color color = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.SetColor("_Color", color);
         color.a -= 0.1f;
+        // mWayPoints = new GameObject[kWayPointNames.Length];
+        // int i = 0;
+        // foreach (string s in kWayPointNames)
+        // {
+        //     mWayPoints[i] = GameObject.Find(kWayPointNames[i]);
+        //     Debug.Assert(mWayPoints[i] != null);
+        //     i++;
+        // }
     }
 
 
@@ -32,7 +45,7 @@ public class Plane : MonoBehaviour
             GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .1F);
             Destroy(col.gameObject);
             if (Health == 0)
-            {
+            {   
                 Destroy(gameObject);
             }
         }
