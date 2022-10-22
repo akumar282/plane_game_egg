@@ -19,6 +19,7 @@ public class Waypoint : MonoBehaviour
     Vector3 F = new Vector3(-41, 1, 0);
     int Health = 100;
     // Start is called before the first frame update
+    Renderer test;
     void Start()
     {
         Color color = GetComponent<Renderer>().material.color;
@@ -33,26 +34,38 @@ public class Waypoint : MonoBehaviour
         Instantiate(s, point, Quaternion.identity);
         GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a + .4F);
     }
-    
+
     void Update()
     {
-       
+        test = GetComponent<SpriteRenderer>();
+        if (Input.GetKeyDown("h"))
+        {
+            if (test.enabled == true)
+            {
+                test.enabled = false;
+            }
+            else if (test.enabled == false)
+            {
+                test.enabled = true;
+            }
+        }
     }
-void OnTriggerEnter2D(Collider2D col)
+    void OnTriggerEnter2D(Collider2D col)
     {
-            if (col.gameObject.tag == "EggoWaffle") {
+        if (col.gameObject.tag == "EggoWaffle")
+        {
             Health -= 25;
             GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .1F);
             Destroy(col.gameObject);
             if (Health == 0)
             {
                 Debug.Log(gameObject.name);
-                if (gameObject.tag == "A_Walk") { Wayspawn(A_Walk, A);}
-                else if (gameObject.tag == "B_Walk") { Wayspawn(B_Walk, B);}
-                else if (gameObject.tag == "C_Walk") { Wayspawn(C_Walk, C);}
-                else if (gameObject.tag == "D_Walk") { Wayspawn(D_Walk, D);}
-                else if (gameObject.tag == "E_Walk") { Wayspawn(E_Walk, E);}
-                else if (gameObject.tag == "F_Walk") { Wayspawn(F_Walk, F);}
+                if (gameObject.tag == "A_Walk") { Wayspawn(A_Walk, A); }
+                else if (gameObject.tag == "B_Walk") { Wayspawn(B_Walk, B); }
+                else if (gameObject.tag == "C_Walk") { Wayspawn(C_Walk, C); }
+                else if (gameObject.tag == "D_Walk") { Wayspawn(D_Walk, D); }
+                else if (gameObject.tag == "E_Walk") { Wayspawn(E_Walk, E); }
+                else if (gameObject.tag == "F_Walk") { Wayspawn(F_Walk, F); }
                 Destroy(gameObject);
             }
         }

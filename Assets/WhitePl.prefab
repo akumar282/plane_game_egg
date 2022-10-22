@@ -164,3 +164,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d1501a74c02d63a43b5fd9c032d6e872, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  A_Walk: {fileID: 1203801149151443318, guid: 4a581a0de3f73224c903776463725def, type: 3}
+  rotationModifier: 90
