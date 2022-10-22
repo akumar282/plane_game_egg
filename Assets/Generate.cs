@@ -41,11 +41,28 @@ public class Generate : MonoBehaviour
             Debug.Assert(mWayPoints[i] != null);
             i++;
         }
+        SeqRand.text = "WAYPOINTS: (SEQUANCE)";
     }
 
     // Update is called once per frame
+    bool seqOrRand = true;
+    public TMP_Text SeqRand;
     void Update()
     {
+        if (Input.GetKeyDown("j"))
+        {
+            if (seqOrRand)
+            {
+                SeqRand.text = "WAYPOINTS: (Random)";
+                seqOrRand = false;
+            }
+            else
+            {
+                SeqRand.text = "WAYPOINTS: (Sequance)";
+                seqOrRand = true;
+            }
+
+        }
         GameObject[] pln = GameObject.FindGameObjectsWithTag("JetPlane");
         int count = pln.Length;
         PlaneNumber.text = "Planes Destroyed " + NumPlanes;
