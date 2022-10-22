@@ -12,7 +12,6 @@ public class Plane : MonoBehaviour
     private const int kNumWayPoints = 6;
     public GameObject A_Walk;
     private float speed = 20f;
-    private float minDist = .7f;
     int Health = 100;
     bool jtr = false;
     int seq = 0;
@@ -21,7 +20,7 @@ public class Plane : MonoBehaviour
     public float rotationModifier = 90;
     void Start()
     {
-        ran = Random.Range(0,5);
+        ran = Random.Range(0, 5);
         Color color = GetComponent<Renderer>().material.color;
         GetComponent<Renderer>().material.SetColor("_Color", color);
         color.a -= 0.1f;
@@ -41,10 +40,13 @@ public class Plane : MonoBehaviour
     {
         if (Input.GetKeyDown("j"))
         {
-            if(jtr == false){
+            if (jtr == false)
+            {
                 jtr = true;
-                ran = Random.Range(0,5);
-            } else {
+                ran = Random.Range(0, 5);
+            }
+            else
+            {
                 jtr = false;
                 seq = 0;
             }
@@ -52,11 +54,11 @@ public class Plane : MonoBehaviour
         }
         if (!jtr)
         {
-            ran =7;
+            ran = 7;
             mWayPoints[seq] = GameObject.FindWithTag(kWayPointNames[seq]);
             if (mWayPoints[seq] != null)
             {
-                Vector3 vectorToTarget = mWayPoints[seq].transform.position- transform.position;
+                Vector3 vectorToTarget = mWayPoints[seq].transform.position - transform.position;
                 float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
                 Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
                 transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
@@ -67,63 +69,87 @@ public class Plane : MonoBehaviour
         else if (jtr)
         {
             seq = 6;
-            if (ran != tempRan) {
+            if (ran != tempRan)
+            {
                 mWayPoints[ran] = GameObject.FindWithTag(kWayPointNames[ran]);
                 if (mWayPoints[ran] != null)
-                {  
-                    Vector3 vectorToTarget = mWayPoints[ran].transform.position- transform.position;
+                {
+                    Vector3 vectorToTarget = mWayPoints[ran].transform.position - transform.position;
                     float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - rotationModifier;
                     Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
                     transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * speed);
                     float step = speed * Time.deltaTime;
                     transform.position = Vector2.MoveTowards(transform.position, mWayPoints[ran].transform.position, step);
-                } 
-            }else {
+                }
+            }
+            else
+            {
                 ran = Random.Range(0, 5);
             }
 
         }
     }
-    void Rmove(){ 
+    void Rmove()
+    {
         tempRan = ran;
-        ran = Random.Range(0, 5);     
+        ran = Random.Range(0, 5);
     }
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "A_Walk" && seq ==0|| ran ==0) { 
+        if (col.gameObject.tag == "A_Walk" && seq == 0 || ran == 0)
+        {
             seq = 1;
-            if (ran == 0) {
-            Rmove();
+            if (ran == 0)
+            {
+                Rmove();
             }
             return;
-        } else if (col.gameObject.tag == "B_Walk"&& (seq ==1|| ran ==1)) { 
+        }
+        else if (col.gameObject.tag == "B_Walk" && (seq == 1 || ran == 1))
+        {
             seq = 2;
-            if (ran == 1) {
-            Rmove();
+            if (ran == 1)
+            {
+                Rmove();
             }
             return;
-        } else if (col.gameObject.tag == "C_Walk"&& (seq ==2|| ran ==2)) { 
+        }
+        else if (col.gameObject.tag == "C_Walk" && (seq == 2 || ran == 2))
+        {
             seq = 3;
-            if (ran == 2) {
-            Rmove();
+            if (ran == 2)
+            {
+                Rmove();
             }
             return;
-        } else if (col.gameObject.tag == "D_Walk"&& (seq ==3|| ran ==3)) { seq = 1;
+        }
+        else if (col.gameObject.tag == "D_Walk" && (seq == 3 || ran == 3))
+        {
+            seq = 1;
             seq = 4;
-            if (ran == 3) {
-            Rmove();
+            if (ran == 3)
+            {
+                Rmove();
             }
             return;
-        } else if (col.gameObject.tag == "E_Walk"&& (seq ==4|| ran ==4)) { seq = 1;
-           seq = 5;
-           if (ran == 4) {
-            Rmove();
+        }
+        else if (col.gameObject.tag == "E_Walk" && (seq == 4 || ran == 4))
+        {
+            seq = 1;
+            seq = 5;
+            if (ran == 4)
+            {
+                Rmove();
             }
             return;
-        } else if (col.gameObject.tag == "F_Walk"&& (seq ==5|| ran ==5)) {seq = 1;
+        }
+        else if (col.gameObject.tag == "F_Walk" && (seq == 5 || ran == 5))
+        {
+            seq = 1;
             seq = 0;
-            if (ran == 5) {
-            Rmove();
+            if (ran == 5)
+            {
+                Rmove();
             }
             return;
         }
