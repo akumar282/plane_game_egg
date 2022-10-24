@@ -161,7 +161,7 @@ public class Plane : MonoBehaviour
         else if (col.gameObject.tag == "EggoWaffle")
         {
             Health -= 25;
-            GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .1F);
+            GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .25F);
             Destroy(col.gameObject);
             if (Health == 0)
             {

@@ -32,7 +32,7 @@ public class Waypoint : MonoBehaviour
         point[0] += Random.Range(-15, 15);
         point[1] += Random.Range(-15, 15);
         Instantiate(s, point, Quaternion.identity);
-        GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a + .4F);
+        GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a + 1F);
     }
 
     void Update()
@@ -55,7 +55,7 @@ public class Waypoint : MonoBehaviour
         if (col.gameObject.tag == "EggoWaffle")
         {
             Health -= 25;
-            GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .1F);
+            GetComponent<Renderer>().material.SetAlpha(GetComponent<Renderer>().material.color.a - .25F);
             Destroy(col.gameObject);
             if (Health == 0)
             {
